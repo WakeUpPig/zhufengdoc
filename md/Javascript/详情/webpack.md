@@ -2,7 +2,6 @@
 webpack是一款强大的模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。
 
 ## 1. webpack初体验
-<img src="/static/img/webpacks.jpg" class="img-responsive">
 
 ### 1.1 初始化git
 ```javascript
@@ -34,14 +33,14 @@ $ mkdir src build
 ```
 
 ### 1.5 增加以下文件
-#### 1.5.1 增加文件`src/component.js`
+#### 1.5.1 `src/component.js`
 ```javascript
 $ cd src && touch component.js
 ```
 ```javascript
 exports.name = 'zfpx';
 ```
-#### 1.5.2 增加文件 `src/index.js`
+#### 1.5.2 `src/index.js`
 ```javascript
 $ cd src && touch index.js
 ```
@@ -49,13 +48,16 @@ $ cd src && touch index.js
 var comp = require('./component.js');
 console.log(comp.name);
 ```
-#### 1.5.3 增加文件`build/index.html`
+#### 1.5.3 `build/index.html`
 ```javascript
 $ cd build && touch index.html
 ```
 ```javascript
 <script src="bundle.js"></script>
 ```
+
+#### 1.5.4 目录结构
+![目录结构](/static/img/webpacks.jpg)
 
 ### 1.6 下载`webpack`和`webpack-dev-server`
 ```
