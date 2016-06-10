@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰JS全栈</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                珠峰JS全栈
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../../../index.html">index</a></li><li><a href="#"><span></span>git&github</a><ul><li><a href="../../../../index.html">git入门</a></li><li><a href="#"><span></span>详情</a><ul><li><a href="../../../../index.html">git安装</a></li></ul></li></ul></li><li><a href="#"><span></span>html&css</a><ul></ul></li><li><a href="#"><span></span>Javascript</a><ul><li><a href="../../../../index.html">入门</a></li><li><a href="#"><span></span>详情</a><ul><li><a href="../../../../index.html">ES6</a></li></ul></li></ul></li><li><a href="#"><span></span>node.js</a><ul></ul></li><li><a href="#"><span></span>前端工程化</a><ul></ul></li><li><a href="#"><span></span>前端框架</a><ul></ul></li><li><a href="#"><span></span>数据库</a><ul></ul></li><li><a href="#"><span></span>编辑器</a><ul></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <p>{&quot;version&quot;:3,&quot;sources&quot;:[&quot;5.function.js&quot;],&quot;names&quot;:[],&quot;mappings&quot;:&quot;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA4BA,CAAC,CAAD,EAAG,CAAH,EAAK,CAAL,EAAQ,OAAR,CAAgB,OAAO,QAAQ,GAAR,CAAY,GAAZ,CAAvB;;AAEA,IAAI,SAAS;AACT,UAAK,MADI;AAET,aAAQ,YAAU;AACtB,SAAS,WAAW,YAAU;AAAC,oBAAQ,GAAR,CAAY,IAAZ;AAAmB,SAAzC,EAA0C,IAA1C,CAAT;AACA,SAAS,WAAW,MAAM,QAAQ,GAAR,CAAY,IAAZ,CAAjB,EAAmC,IAAnC,CAAT;AACK;AALQ,CAAb;AAOA,OAAO,OAAP&quot;,&quot;file&quot;:&quot;5.function-compiled.js&quot;,&quot;sourcesContent&quot;:[&quot;/<em>let desc  = function(name=&apos;zfpx&apos;,age=8){\r\n    console.log(<code>${name} is ${age} years old!</code>);\r\n}\r\ndesc(&apos;zfpx2&apos;);</em>/\r\n\r\n/<em>let print = function(a,b,c){\r\n    console.log(a,b,c);\r\n}\r\nprint([1,2,3]);\r\nprint(...[1,2,3]);</em>/\r\n\r\n/<em>let rest = function(a,...b){\r\n    console.log(a,b);\r\n}\r\nrest(1,2,3);</em>/\r\n\r\n\r\n/<em>\r\nlet destruct = function({name,age}){\r\n    console.log(name,age);\r\n}\r\ndestruct({name:&apos;zfpx&apos;,age:6});\r\n\r\n</em>/\r\n\r\n/<em>var desc = function descname(){}\r\nconsole.log(desc.name);</em>/\r\n\r\n[1,2,3].forEach(val =&gt; console.log(val));\r\n\r\nvar person = {\r\n    name:&apos;zfpx&apos;,\r\n    getName:function(){\r\n-        setTimeout(function(){console.log(this);},1000);\r\n+        setTimeout(() =&gt; console.log(this),1000);\r\n    }\r\n}\r\nperson.getName();&quot;]}</p>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

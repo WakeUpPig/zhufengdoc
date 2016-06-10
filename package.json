@@ -1,5 +1,5 @@
 {
-    "name": "zhufengdoc",
+    "name": "珠峰JS全栈",
     "version": "0.0.1",
     "description": "",
     "keywords": [
@@ -13,9 +13,47 @@
     },
     "licenses": "MIT",
     "idoc": {
-        "theme": "default",
+        "theme": "doc",
         "md": [
-            "index.md"
+            "index.md",
+            {
+                "git&github": [
+                    "git入门.md",
+                    {
+                        "详情": [
+                            "git安装.md"
+                        ]
+                    }
+                ]
+            },
+            {
+                "html&css": []
+            },
+            {
+                "Javascript": [
+                    "入门.md",
+                    {
+                        "详情": [
+                            "ES6.md"
+                        ]
+                    }
+                ]
+            },
+            {
+                "node.js": []
+            },
+            {
+                "前端工程化": []
+            },
+            {
+                "前端框架": []
+            },
+            {
+                "数据库": []
+            },
+            {
+                "编辑器": []
+            }
         ]
     }
 }

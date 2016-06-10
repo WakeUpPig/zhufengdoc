@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰JS全栈</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                珠峰JS全栈
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../../index.html">index</a></li><li><a href="#"><span></span>git&github</a><ul><li><a href="../../../index.html">git入门</a></li><li><a href="#"><span></span>详情</a><ul><li><a href="../../../index.html">git安装</a></li></ul></li></ul></li><li><a href="#"><span></span>html&css</a><ul></ul></li><li><a href="#"><span></span>Javascript</a><ul><li><a href="../../../index.html">入门</a></li><li><a href="#"><span></span>详情</a><ul><li><a href="../../../index.html">ES6</a></li></ul></li></ul></li><li><a href="#"><span></span>node.js</a><ul></ul></li><li><a href="#"><span></span>前端工程化</a><ul></ul></li><li><a href="#"><span></span>前端框架</a><ul></ul></li><li><a href="#"><span></span>数据库</a><ul></ul></li><li><a href="#"><span></span>编辑器</a><ul></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0ECMAScript6">ECMAScript6</a></li><li><a href="#t11. 级块作用域变量-let">1. 级块作用域变量-let</a></li><li><a href="#t22. 常量-const">2. 常量-const</a></li><li><a href="#t33. 解构">3. 解构</a><ul><li><a href="#t43.1 解析数组">3.1 解析数组</a></li><li><a href="#t53.2 解构对象">3.2 解构对象</a></li></ul></li><li><a href="#t64. 模板字符串">4. 模板字符串</a><ul><li><a href="#t74.1 模板字符串">4.1 模板字符串</a></li><li><a href="#t84.2 带标签的模板字符串">4.2 带标签的模板字符串</a></li><li><a href="#t94.3 字符串新方法">4.3 字符串新方法</a></li></ul></li><li><a href="#t105. 函数">5. 函数</a><ul><li><a href="#t115.1 默认参数">5.1 默认参数</a></li><li><a href="#t125.1 展开操作符">5.1 展开操作符</a></li><li><a href="#t135.1 剩余操作符">5.1 剩余操作符</a></li><li><a href="#t145.1 解构参数">5.1 解构参数</a></li><li><a href="#t155.1 函数的名字">5.1 函数的名字</a></li><li><a href="#t165.1 箭头函数">5.1 箭头函数</a></li></ul></li><li><a href="#t176. 对象">6. 对象</a><ul><li><a href="#t186.1 对象字面量">6.1 对象字面量</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h2 id="t0ECMAScript6">ECMAScript6 <a href="#t0ECMAScript6"> # </a></h2>
+<p>ECMAScript &#x7B80;&#x79F0;&#x5C31;&#x662F; ES &#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x770B;&#x6210;&#x662F;&#x4E00;&#x5957;&#x6807;&#x51C6;&#xFF0C; JavaScript &#x5C31;&#x662F;&#x5B9E;&#x65BD;&#x4E86;&#x8FD9;&#x5957;&#x6807;&#x51C6;&#x7684;&#x4E00;&#x95E8;&#x8BED;&#x8A00;&#x3002; &#x73B0;&#x5728;&#x4E3B;&#x6D41;&#x6D4F;&#x89C8;&#x5668;&#x4F7F;&#x7528;&#x7684;&#x662F; ECMASciprt 5 &#x3002;</p>
+<h2 id="t11. &#x7EA7;&#x5757;&#x4F5C;&#x7528;&#x57DF;&#x53D8;&#x91CF;-let">1. &#x7EA7;&#x5757;&#x4F5C;&#x7528;&#x57DF;&#x53D8;&#x91CF;-let <a href="#t11. &#x7EA7;&#x5757;&#x4F5C;&#x7528;&#x57DF;&#x53D8;&#x91CF;-let"> # </a></h2>
+<p>&#x4F5C;&#x7528;&#x57DF;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x4E3A;&#x4F5C;&#x7528;&#x8303;&#x56F4;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x4EE5;&#x540E;&#xFF0C;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x5728;&#x4EC0;&#x4E48;&#x573A;&#x5408;&#x4E0B;&#x4F7F;&#x7528;<br>&#x4EE5;&#x524D;&#x7684;<em>JavaScript</em>&#x53EA;&#x6709;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;<br>&#x73B0;&#x5728;<em>JavaScript</em>&#x4E5F;&#x6709;&#x4E86;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;,&#x7528;&#x4E00;&#x7EC4;&#x5927;&#x62EC;&#x53F7;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5757;,&#x4F7F;&#x7528; let &#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x5728;&#x5927;&#x62EC;&#x53F7;&#x7684;&#x5916;&#x9762;&#x662F;&#x8BBF;&#x95EE;&#x4E0D;&#x5230;&#x7684;   </p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>){
+    <span class="hljs-keyword">let</span> name = <span class="hljs-string">&apos;zfpx&apos;</span>;
+}
+<span class="hljs-built_in">console</span>.log(name);<span class="hljs-comment">// ReferenceError: name is not defined</span>
+</code></pre>
+<h2 id="t22. &#x5E38;&#x91CF;-const">2. &#x5E38;&#x91CF;-const <a href="#t22. &#x5E38;&#x91CF;-const"> # </a></h2>
+<p>&#x4F7F;&#x7528;<code>const</code>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53BB;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#xFF0C;&#x5E38;&#x91CF;&#x4E00;&#x65E6;&#x8D4B;&#x503C;&#x5C31;&#x4E0D;&#x80FD;&#x518D;&#x4FEE;&#x6539;&#x4E86;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> fruit = <span class="hljs-string">&apos;zfpx&apos;</span>;
+fruit = <span class="hljs-string">&apos;zfpx2&apos;</span>;<span class="hljs-comment">//Assignment to constant variable</span>
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;<code>const</code>&#x9650;&#x5236;&#x7684;&#x662F;&#x4E0D;&#x80FD;&#x7ED9;&#x53D8;&#x91CF;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#xFF0C;&#x800C;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x672C;&#x8EAB;&#x662F;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x7684;,&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x53EF;&#x4EE5;&#x7684;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> names = [<span class="hljs-string">&apos;zfpx1&apos;</span>];
+names.push(<span class="hljs-string">&apos;zfpx2&apos;</span>);
+<span class="hljs-built_in">console</span>.log(names);
+</code></pre>
+<h2 id="t33. &#x89E3;&#x6784;">3. &#x89E3;&#x6784; <a href="#t33. &#x89E3;&#x6784;"> # </a></h2>
+<h3 id="t43.1 &#x89E3;&#x6790;&#x6570;&#x7EC4;">3.1 &#x89E3;&#x6790;&#x6570;&#x7EC4; <a href="#t43.1 &#x89E3;&#x6790;&#x6570;&#x7EC4;"> # </a></h3>
+<p>&#x89E3;&#x6784;&#x610F;&#x601D;&#x5C31;&#x662F;&#x5206;&#x89E3;&#x4E00;&#x4E2A;&#x4E1C;&#x897F;&#x7684;&#x7ED3;&#x6784;,&#x53EF;&#x4EE5;&#x7528;&#x89E3;&#x6784;&#x628A;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x503C;&#x4F9D;&#x6B21;&#x8D4B;&#x503C;&#x7ED9;&#x4E00;&#x7EC4;&#x53D8;&#x91CF;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> [name,age] = [<span class="hljs-string">&apos;zfpx&apos;</span>,<span class="hljs-number">8</span>];
+<span class="hljs-built_in">console</span>.log(name,age);
+</code></pre>
+<blockquote>
+<p>&#x8FD9;&#x6837;&#x6570;&#x7EC4;&#x91CC;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x5C31;&#x4F1A;&#x4EA4;&#x7ED9;&#x524D;&#x9762;<code>name</code>&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x503C;&#x4F1A;&#x5206;&#x914D;&#x7ED9;<code>age</code>&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;</p>
+</blockquote>
+<h3 id="t53.2 &#x89E3;&#x6784;&#x5BF9;&#x8C61;">3.2 &#x89E3;&#x6784;&#x5BF9;&#x8C61; <a href="#t53.2 &#x89E3;&#x6784;&#x5BF9;&#x8C61;"> # </a></h3>
+<p>&#x5BF9;&#x8C61;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x89E3;&#x6784;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> {name,age} = {name:<span class="hljs-string">&apos;zfpx&apos;</span>,age:<span class="hljs-number">8</span>};
+<span class="hljs-built_in">console</span>.log(name,age);
+</code></pre>
+<blockquote>
+<p>&#x5BF9;&#x8C61;&#x91CC;&#x7684;name&#x5C5E;&#x6027;&#x7684;&#x503C;&#x4F1A;&#x4EA4;&#x7ED9;name&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;age&#x7684;&#x503C;&#x4F1A;&#x4EA4;&#x7ED9;age&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;</p>
+</blockquote>
+<h2 id="t64. &#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;">4. &#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32; <a href="#t64. &#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;"> # </a></h2>
+<h3 id="t74.1 &#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;">4.1 &#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32; <a href="#t74.1 &#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;"> # </a></h3>
+<p>&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x7528;&#x53CD;&#x5F15;&#x53F7;(&#x6570;&#x5B57;1&#x5DE6;&#x8FB9;&#x7684;&#x90A3;&#x4E2A;&#x952E;)&#x5305;&#x542B;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x7528;<code>${}</code>&#x62EC;&#x8D77;&#x6765;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&apos;zfpx&apos;</span>,age = <span class="hljs-number">8</span>;
+<span class="hljs-keyword">let</span> desc = <span class="hljs-string">`<span class="hljs-subst">${name}</span> is <span class="hljs-subst">${age}</span> old!`</span>;
+<span class="hljs-built_in">console</span>.log(desc);
+</code></pre>
+<blockquote>
+<p>&#x5176;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x4F1A;&#x7528;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x66FF;&#x6362;&#x6389;</p>
+</blockquote>
+<h3 id="t84.2 &#x5E26;&#x6807;&#x7B7E;&#x7684;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;">4.2 &#x5E26;&#x6807;&#x7B7E;&#x7684;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32; <a href="#t84.2 &#x5E26;&#x6807;&#x7B7E;&#x7684;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;"> # </a></h3>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x524D;&#x9762;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x8FD9;&#x4E2A;&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x53BB;&#x5904;&#x7406;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;<br>&#x6807;&#x7B7E;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;,&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;,&#x4E00;&#x4E2A;&#x662F;<code>strings</code>,&#x5C31;&#x662F;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x91CC;&#x7684;&#x6BCF;&#x4E2A;&#x90E8;&#x5206;&#x7684;&#x5B57;&#x7B26;<br>&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>rest</code>&#x7684;&#x5F62;&#x5F0F;<code>values</code>,&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x91CC;&#x9762;&#x662F;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x91CC;&#x7684;&#x503C;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&apos;zfpx&apos;</span>,age = <span class="hljs-number">8</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">desc</span>(<span class="hljs-params">strings,...values</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(strings,values);
+}
+desc<span class="hljs-string">`<span class="hljs-subst">${name}</span> is <span class="hljs-subst">${age}</span> old!`</span>;
+</code></pre>
+<h3 id="t94.3 &#x5B57;&#x7B26;&#x4E32;&#x65B0;&#x65B9;&#x6CD5;">4.3 &#x5B57;&#x7B26;&#x4E32;&#x65B0;&#x65B9;&#x6CD5; <a href="#t94.3 &#x5B57;&#x7B26;&#x4E32;&#x65B0;&#x65B9;&#x6CD5;"> # </a></h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> desc = <span class="hljs-string">&apos;zfpx is 8 years old&apos;</span>;
+<span class="hljs-built_in">console</span>.log(desc.endsWith(<span class="hljs-string">&apos;old&apos;</span>)); <span class="hljs-comment">//&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4EE5;`old`&#x7ED3;&#x5C3E;</span>
+<span class="hljs-built_in">console</span>.log(desc.startsWith(<span class="hljs-string">&apos;zfpx&apos;</span>));<span class="hljs-comment">// &#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4EE5;`zfpx`&#x5F00;&#x5934;</span>
+<span class="hljs-built_in">console</span>.log(desc.includes(<span class="hljs-string">&apos;is&apos;</span>));<span class="hljs-comment">//&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x5305;&#x542B;`is`</span>
+</code></pre>
+<h2 id="t105. &#x51FD;&#x6570;">5. &#x51FD;&#x6570; <a href="#t105. &#x51FD;&#x6570;"> # </a></h2>
+<h3 id="t115.1 &#x9ED8;&#x8BA4;&#x53C2;&#x6570;">5.1 &#x9ED8;&#x8BA4;&#x53C2;&#x6570; <a href="#t115.1 &#x9ED8;&#x8BA4;&#x53C2;&#x6570;"> # </a></h3>
+<p>&#x53EF;&#x4EE5;&#x7ED9;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x7684;&#x503C;<br>&#x5728;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7684;&#x503C;&#xFF0C;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x53C2;&#x6570;&#x7684;&#x8FD9;&#x4E9B;&#x9ED8;&#x8BA4;&#x7684;&#x503C;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> desc  = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">name=&apos;zfpx&apos;,age=8</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${name}</span> is <span class="hljs-subst">${age}</span> years old!`</span>);
+}
+desc(<span class="hljs-string">&apos;zfpx2&apos;</span>);
+</code></pre>
+<h3 id="t125.1 &#x5C55;&#x5F00;&#x64CD;&#x4F5C;&#x7B26;">5.1 &#x5C55;&#x5F00;&#x64CD;&#x4F5C;&#x7B26; <a href="#t125.1 &#x5C55;&#x5F00;&#x64CD;&#x4F5C;&#x7B26;"> # </a></h3>
+<p>&#x628A;...&#x653E;&#x5728;&#x6570;&#x7EC4;&#x524D;&#x9762;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x5C55;&#x5F00;,&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x76F4;&#x63A5;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>apply</code></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> print = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a,b,c</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(a,b,c);
+}
+print([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]);
+print(...[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]);
+</code></pre>
+<h3 id="t135.1 &#x5269;&#x4F59;&#x64CD;&#x4F5C;&#x7B26;">5.1 &#x5269;&#x4F59;&#x64CD;&#x4F5C;&#x7B26; <a href="#t135.1 &#x5269;&#x4F59;&#x64CD;&#x4F5C;&#x7B26;"> # </a></h3>
+<p>&#x5269;&#x4F59;&#x64CD;&#x4F5C;&#x7B26;&#x53EF;&#x4EE5;&#x628A;&#x5176;&#x4F59;&#x7684;&#x53C2;&#x6570;&#x7684;&#x503C;&#x90FD;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x53EB;<code>b</code>&#x7684;&#x6570;&#x7EC4;&#x91CC;&#x9762;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> rest = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a,...b</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(a,b);
+}
+rest(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);
+</code></pre>
+<h3 id="t145.1 &#x89E3;&#x6784;&#x53C2;&#x6570;">5.1 &#x89E3;&#x6784;&#x53C2;&#x6570; <a href="#t145.1 &#x89E3;&#x6784;&#x53C2;&#x6570;"> # </a></h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> destruct = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">{name,age}</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(name,age);
+}
+destruct({name:<span class="hljs-string">&apos;zfpx&apos;</span>,age:<span class="hljs-number">6</span>});
+</code></pre>
+<h3 id="t155.1 &#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57;">5.1 &#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57; <a href="#t155.1 &#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57;"> # </a></h3>
+<p>ECMAScript 6 &#x7ED9;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;<code>name</code>&#x5C5E;&#x6027;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> desc = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">descname</span>(<span class="hljs-params"></span>)</span>{}
+<span class="hljs-built_in">console</span>.log(desc.name);
+</code></pre>
+<h3 id="t165.1 &#x7BAD;&#x5934;&#x51FD;&#x6570;">5.1 &#x7BAD;&#x5934;&#x51FD;&#x6570; <a href="#t165.1 &#x7BAD;&#x5934;&#x51FD;&#x6570;"> # </a></h3>
+<p>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7B80;&#x5316;&#x4E86;&#x51FD;&#x6570;&#x7684;&#x7684;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#xFF0C;&#x4E00;&#x822C;&#x4EE5; &quot;=&gt;&quot; &#x64CD;&#x4F5C;&#x7B26;&#x5DE6;&#x8FB9;&#x4E3A;&#x8F93;&#x5165;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x53F3;&#x8FB9;&#x5219;&#x662F;&#x8FDB;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x4EE5;&#x53CA;&#x8FD4;&#x56DE;&#x7684;&#x503C;<code>inputs=&gt;output</code></p>
+<pre><code class="lang-javascript">[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>].forEach(val =&gt; <span class="hljs-built_in">console</span>.log(val)););
+</code></pre>
+<blockquote>
+<p>&#x8F93;&#x5165;&#x53C2;&#x6570;&#x5982;&#x679C;&#x591A;&#x4E8E;&#x4E00;&#x4E2A;&#x8981;&#x7528;()&#x5305;&#x8D77;&#x6765;&#xFF0C;&#x51FD;&#x6570;&#x4F53;&#x5982;&#x679C;&#x6709;&#x591A;&#x6761;&#x8BED;&#x53E5;&#x9700;&#x8981;&#x7528;{}&#x5305;&#x8D77;&#x6765;</p>
+</blockquote>
+<p>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x6839;&#x672C;&#x6CA1;&#x6709;&#x81EA;&#x5DF1;&#x7684;this&#xFF0C;&#x5BFC;&#x81F4;&#x5185;&#x90E8;&#x7684;this&#x5C31;&#x662F;&#x5916;&#x5C42;&#x4EE3;&#x7801;&#x5757;&#x7684;this&#x3002;
+&#x6B63;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x6CA1;&#x6709;this&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x4E86;this&#x6307;&#x5411;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<pre><code class="lang-diff">var person = {
+    name:&apos;zfpx&apos;,
+    getName:function(){
+<span class="hljs-deletion">-        setTimeout(function(){console.log(this);},1000); //&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x6267;&#x884C;&#x7684;&#x8BDD;this&#x6307;&#x5411;window</span>
+<span class="hljs-addition">+        setTimeout(() =&gt; console.log(this),1000);//&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x6267;&#x884C;&#x7684;&#x8BDD;this&#x6307;&#x5411;person</span>
+    }
+}
+person.getName();
+</code></pre>
+<h2 id="t176. &#x5BF9;&#x8C61;">6. &#x5BF9;&#x8C61; <a href="#t176. &#x5BF9;&#x8C61;"> # </a></h2>
+<h3 id="t186.1 &#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF;">6.1 &#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF; <a href="#t186.1 &#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF;"> # </a></h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x5BF9;&#x8C61;&#x91CC;&#x6DFB;&#x52A0;&#x8DDF;&#x53D8;&#x91CF;&#x540D;&#x4E00;&#x6837;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x5C31;&#x662F;&#x53D8;&#x91CF;&#x8868;&#x793A;&#x7684;&#x503C;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x5BF9;&#x8C61;&#x91CC;&#x52A0;&#x4E0A;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> name = <span class="hljs-string">&apos;zfpx&apos;</span>;
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">8</span>;
+<span class="hljs-keyword">let</span> getName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);
+}
+<span class="hljs-keyword">let</span> person = {
+    name,
+    age,
+    getName
+}
+person.getName();
+</code></pre>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
