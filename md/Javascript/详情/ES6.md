@@ -97,7 +97,7 @@ let print = function(a,b,c){
 print([1,2,3]);
 print(...[1,2,3]);
 ```
-### 5.1 剩余操作符
+### 5.2 剩余操作符
 剩余操作符可以把其余的参数的值都放到一个叫`b`的数组里面
 ```javascript
 let rest = function(a,...b){
@@ -105,7 +105,7 @@ let rest = function(a,...b){
 }
 rest(1,2,3);
 ```
-### 5.1 解构参数
+### 5.3 解构参数
 ```javascript
 let destruct = function({name,age}){
     console.log(name,age);
@@ -114,13 +114,13 @@ destruct({name:'zfpx',age:6});
             
 ```
 
-### 5.1 函数的名字
+### 5.4 函数的名字
 ECMAScript 6 给函数添加了一个`name`属性
 ```javascript
 var desc = function descname(){}
 console.log(desc.name);
 ```
-### 5.1 箭头函数
+### 5.5 箭头函数
 箭头函数简化了函数的的定义方式，一般以 "=>" 操作符左边为输入的参数，而右边则是进行的操作以及返回的值`inputs=>output`
 ```javascript
 [1,2,3].forEach(val => console.log(val)););
@@ -173,7 +173,7 @@ Object.assign(obj,nameObj,ageObj);
 console.log(obj);
 ```
 
-### 6.5 Object.setPrototypeOf
+### 6.4 Object.setPrototypeOf
 将一个指定的对象的原型设置为另一个对象或者null
 ```javascript
 var obj1  = {name:'zfpx1'};
@@ -187,7 +187,7 @@ console.log(obj.name);
 console.log(Object.getPrototypeOf(obj));
 ```
 
-### 6.6 __proto__
+### 6.5 __proto__
 直接在对象表达式中设置prototype
 ```javascript
 var obj1  = {name:'zfpx1'};
@@ -199,7 +199,7 @@ console.log(Object.getPrototypeOf(obj3));
 ```
 
 
-### 6.7 super
+### 6.6 super
 通过super可以调用prototype上的属性或方法
 ```javascript
 let person ={
@@ -243,4 +243,169 @@ do {
 } while (!curr.done);
 ```
 
+### 7.2 Generators
+生成器用于创建迭代器
+```javascript
+function* buy(books){
+    for(var i=0;i<books.length;i++){
+        yield books[i];
+    }
+}
+let buying = buy(['js','html']);
+var curr;
+do {
+    curr = buying.next();
+    console.log(curr);
+} while (!curr.done);
+````
 
+## 8. 类
+### 8.1 class
+使用`class`这个关键词定义一个类,基于这个类创建实例以后会自动执行`constructor`方法,此方法可以用来初始化
+```javascript
+class Person {
+    constructor(name){
+        this.name = name;
+    }
+    getName(){
+        console.log(this.name);
+    }
+}
+let person = new Person('zfpx');
+person.getName();
+```
+### 8.2 get与set
+`getter`可以用来得获取属性，`setter`可以去设置属性
+```javascript
+class Person {
+    constructor(){
+        this.hobbies = [];
+    }
+    set hobby(hobby){
+        this.hobbies.push(hobby);
+    }
+    get hobby(){
+        return this.hobbies;
+    }
+}
+let person = new Person();
+person.hobby = 'basketball';
+person.hobby = 'football';
+console.log(person.hobby);
+```
+### 8.3 静态方法-static
+在类里面添加静态的方法可以使用`static`这个关键词，静态方法就是不需要实例化类就能使用的方法
+```javascript
+class Person {
+   static add(a,b){
+       return a+b;
+   }
+}
+console.log(Person.add(1,2));
+
+```
+
+### 8.4 继承extends
+一个类可以去继承其它的类里的东西
+```javascript
+class Person {
+   constructor(name){
+     this.name = name;
+   }
+}
+class Teacher extends Person{
+    constructor(name,age){
+        super(name);
+        this.age = age;
+    }
+}
+var teacher = new Teacher('zfpx',8);
+console.log(teacher.name,teacher.age);
+```
+
+## 9.集合
+### 9.1 Set
+一个`Set`是一堆东西的集合,`Set`有点像数组,不过跟数组不一样的是，`Set`里面不能有重复的内容
+```javascript
+var books = new Set();
+books.add('js');
+books.add('js');//添加重复元素集合的元素个数不会改变
+books.add('html');
+books.forEach(function(book){//循环集合
+    console.log(book);
+})
+console.log(books.size);//集合中元数的个数
+console.log(books.has('js'));//判断集合中是否有此元素
+books.delete('js');//从集合中删除此元素
+console.log(books.size);
+console.log(books.has('js'));
+books.clear();//清空 set
+console.log(books.size);
+```
+
+### 9.2 Map
+可以使用 Map 来组织这种名值对的数据
+```javascript
+var books = new Map();
+books.set('js',{name:'js'});//向map中添加元素
+books.set('html',{name:'html'});
+console.log(books.size);//查看集合中的元素
+console.log(books.get('js'));//通过key获取值
+books.delete('js');//执照key删除元素
+console.log(books.has('js'));//判断map中有没有key
+books.forEach((value, key) => { //forEach可以迭代map
+    console.log( key + ' = ' + value);
+});
+books.clear();//清空map
+```
+
+
+## 10.模块  
+可以根据应用的需求把代码分成不同的模块  
+每个模块里可以导出它需要让其它模块使用的东西  
+在其它模块里面可以导入这些模块导出的东西  
+### 10.1 模块
+在浏览器中使用模块需要借助
+导出
+```javascript
+export var name = 'zfpx';
+export var age = 8;
+```
+导入
+```javascript
+//import {name,age} from './school.js';
+import * as school from './school.js';
+console.log(school.name,school.age);
+```
+在页面中引用
+```javascript
+<script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+<script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+<script type="module" src="index.js"></script>
+```
+### 10.2 重命名
+导出时重命名
+```javascript
+function say(){
+    console.log('say');
+}
+export {say as say2};
+```
+
+导入时重命名
+```javascript
+import {say2 as say3} from './school.js';
+```
+### 10.3 默认导出
+每个模块都可以有一个默认要导出的东西
+导出
+```javascript
+export default function say(){
+    console.log('say');
+}
+```
+导入
+```javascript
+import say from './school.js';
+```

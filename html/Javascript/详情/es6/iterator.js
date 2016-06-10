@@ -1,3 +1,4 @@
+/*
 function buy(books) {
     let i = 0;
     return {
@@ -16,5 +17,20 @@ let interator = buy(['js', 'html']);
 var curr;
 do {
     curr = interator.next();
+    console.log(curr);
+} while (!curr.done);
+*/
+
+
+//创建生成器
+function* buy(books){
+    for(var i=0;i<books.length;i++){
+        yield books[i];
+    }
+}
+let buying = buy(['js','html']);
+var curr;
+do {
+    curr = buying.next();
     console.log(curr);
 } while (!curr.done);
