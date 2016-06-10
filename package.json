@@ -1,0 +1,21 @@
+{
+    "name": "zhufengdoc",
+    "version": "0.0.1",
+    "description": "",
+    "keywords": [
+        ""
+    ],
+    "homepage": "http://JSLite.io",
+    "author": "zhufengnodejs <zhufengnodejs@126.com>",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "licenses": "MIT",
+    "idoc": {
+        "theme": "default",
+        "md": [
+            "index.md"
+        ]
+    }
+}
