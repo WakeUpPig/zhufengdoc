@@ -157,5 +157,90 @@ let person = {
 person.getName();
 ```
 
+### 6.2 Object.is
+对比两个值是否相等
+```javascript
+console.log(Object.is(NaN,NaN));
+
+```
+### 6.3 Object.assign
+把多个对象的属性复制到一个对象中,第一个参数是复制的对象,从第二个参数开始往后,都是复制的源对象
+```javascript
+var nameObj = {name:'zfpx'};
+var ageObj = {age:8};
+var obj = {};
+Object.assign(obj,nameObj,ageObj);
+console.log(obj);
+```
+
+### 6.5 Object.setPrototypeOf
+将一个指定的对象的原型设置为另一个对象或者null
+```javascript
+var obj1  = {name:'zfpx1'};
+var obj2 =  {name:'zfpx2'};
+var obj = {};
+Object.setPrototypeOf(obj,obj1);
+console.log(obj.name);
+console.log(Object.getPrototypeOf(obj));
+Object.setPrototypeOf(obj,obj2);
+console.log(obj.name);
+console.log(Object.getPrototypeOf(obj));
+```
+
+### 6.6 __proto__
+直接在对象表达式中设置prototype
+```javascript
+var obj1  = {name:'zfpx1'};
+var obj3 = {
+    __proto__:obj1
+}
+console.log(obj3.name);
+console.log(Object.getPrototypeOf(obj3));
+```
+
+
+### 6.7 super
+通过super可以调用prototype上的属性或方法
+```javascript
+let person ={
+    eat(){
+        return 'milk';
+    }
+}
+let student = {
+    __proto__:person,
+    eat(){
+        return super.eat()+' bread'
+    }
+}
+console.log(student.eat());
+```
+
+## 7.生成器与迭代器
+### 7.1 Iterators
+迭代器有一个next方法，每次执行的时候会返回一个对象
+对象里面有两个属性，一个是`value`表示返回的值，还有就是布尔值`done`,表示是否迭代完成
+```javascript
+function buy(books) {
+    let i = 0;
+    return {
+        next(){
+            let done = i == books.length;
+            let value = !done ? books[i++] : undefined;
+            return {
+                value: value,
+                done: done
+            }
+        }
+    }
+}
+
+let interator = buy(['js', 'html']);
+var curr;
+do {
+    curr = interator.next();
+    console.log(curr);
+} while (!curr.done);
+```
 
 
