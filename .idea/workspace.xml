@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b149d51b-af50-443c-b0f0-01e1907e684a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/Javascript/详情/es6/iterator.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Javascript/详情/es6/4.template-compiled.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Javascript/详情/es6/4.template-compiled.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Javascript/详情/es6/5.function-compiled.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Javascript/详情/es6/5.function-compiled.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Javascript/详情/es6/6.obj-compiled.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/Javascript/详情/es6/6.obj-compiled.js.map" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/img/forkgithub.png" afterPath="$PROJECT_DIR$/static/img/forkgithub.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/Javascript/入门.html" afterPath="$PROJECT_DIR$/html/Javascript/入门.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/Javascript/详情/ES6.html" afterPath="$PROJECT_DIR$/html/Javascript/详情/ES6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/git&amp;github/git入门.html" afterPath="$PROJECT_DIR$/html/git&amp;github/git入门.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/git&amp;github/详情/git安装.html" afterPath="$PROJECT_DIR$/html/git&amp;github/详情/git安装.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/md/Javascript/详情/ES6.md" afterPath="$PROJECT_DIR$/md/Javascript/详情/ES6.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/md/Javascript/详情/es6/6.obj.js" afterPath="$PROJECT_DIR$/md/Javascript/详情/es6/6.obj.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
     </list>
     <ignored path="zhufengdoc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,8 +42,8 @@
       <file leaf-file-name="ES6.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/Javascript/详情/ES6.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.533101">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.6445993">
+              <caret line="256" column="37" selection-start-line="256" selection-start-column="37" selection-end-line="256" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -99,7 +83,6 @@
         <option value="$PROJECT_DIR$/md/index.md" />
         <option value="$PROJECT_DIR$/md/Javascript/详情/es6/1.let.js" />
         <option value="$PROJECT_DIR$/html/Javascript/入门.html" />
-        <option value="$PROJECT_DIR$/html/Javascript/详情/ES6.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/md/Javascript/详情/es6/2.const.js" />
         <option value="$PROJECT_DIR$/md/Javascript/详情/es6/3.destructure.js" />
@@ -109,6 +92,7 @@
         <option value="$PROJECT_DIR$/md/Javascript/详情/es6/6.obj.js" />
         <option value="$PROJECT_DIR$/html/Javascript/详情/es6/iterator.js" />
         <option value="$PROJECT_DIR$/md/Javascript/详情/ES6.md" />
+        <option value="$PROJECT_DIR$/html/Javascript/详情/ES6.html" />
       </list>
     </option>
   </component>
@@ -215,72 +199,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="md" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhufengdoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhufengdoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="md" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Javascript" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhufengdoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhufengdoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="md" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Javascript" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="详情" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhufengdoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhufengdoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="md" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Javascript" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="详情" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es6" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -685,8 +603,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/html/Javascript/详情/ES6.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.533101">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.6445993">
+          <caret line="256" column="37" selection-start-line="256" selection-start-column="37" selection-end-line="256" selection-end-column="37" />
           <folding />
         </state>
       </provider>
