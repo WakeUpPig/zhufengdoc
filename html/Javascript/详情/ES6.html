@@ -409,7 +409,8 @@ books.clear();<span class="hljs-comment">//&#x6E05;&#x7A7A;map</span>
 <script>
 var bar = $(window).height() - $('.navbar ').height() - $('.page-toc').position().top;
 var count =  bar/26/2;
-var barHeight = $('.page-toc').outerHeight()
+var barHeight = $('.page-toc').outerHeight();
+var barH = $('.page-toc').height();
 $('.page-toc li').eq(0).children('a').addClass('red');
 var arr = [];
 $("h2,h3").each(function () {
@@ -438,6 +439,8 @@ function dark(){
         $(' .page-toc > ul').css('top',0);
     }
 }
-$(window).on('scroll',dark);
+if(barHeight>barH){
+    $(window).on('scroll',dark);
+}
 </script>
 </html>
